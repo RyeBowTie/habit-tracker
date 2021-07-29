@@ -1,10 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Home from './pages/Home';
-import Matchup from './pages/Matchup';
-import Vote from './pages/Vote';
-import NotFound from './pages/NotFound';
+
+import MoodForm from './components/moodForm';
+import CalendarPage from './components/Calendar';
+import Home from './components/home';
+import Dashboard from './components/habitDashboard';
+import Habits from './components/habits';
+import habits from './habitExamples'
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -15,7 +18,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-center align-center min-100-vh bg-primary">
+        <MoodForm/>
+        {/* <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Switch>
             <Route exact path="/">
               <Home />
@@ -30,7 +34,7 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-        </div>
+        </div> */}
       </Router>
     </ApolloProvider>
   );
