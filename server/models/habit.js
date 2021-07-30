@@ -7,7 +7,6 @@ const habitSchema = new Schema({
   },
   date: {
     type: Date,
-    required: true,
     default: Date.now
     
   },
@@ -23,4 +22,4 @@ const habitSchema = new Schema({
 
 const Habit = model('Habit', habitSchema);
 
-module.exports = habitSchema;
+module.exports = Habit;

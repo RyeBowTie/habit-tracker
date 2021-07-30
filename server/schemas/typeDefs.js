@@ -6,13 +6,15 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type Mood {
         _id: ID
-        date: [String]
+        name:String
+        date: String
         rating: String
        
     }
     type Habit {
         _id: ID
-        date: [String]
+        name:String
+        date: String
         rating: String
     }
     type User {
@@ -32,6 +34,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        addHabit(name:String,rating:String,id:String): User
     }
     
 `;

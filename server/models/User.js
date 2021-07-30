@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Book.js
-const habitSchema = require('./habit');
-const moodSchema = require('./mood');
+// import schema from habit and mood
+/* const Habit = require('./habit');
+const Mood = require('./mood'); */
 
 const userSchema = new Schema(
   {
@@ -23,10 +23,20 @@ const userSchema = new Schema(
       required: true,
     },
     // set habits to be an array of data that adheres to the habitSchema
-    habits: [habitSchema],
+    habits:[
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Habit'
+      }
+    ],
   
     // set mood to be an array of data that adheres to the mood
-    mood: [moodSchema],
+    moods:[
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Mood'
+      }
+    ]
   },
 
   // set this to use virtual below
