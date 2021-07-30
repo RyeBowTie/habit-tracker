@@ -14,9 +14,12 @@ export default function Mood() {
              <h1>Mood</h1>
                <div className ="container">
                    <div className="item">
-                    <img id="smile"
+                    <img  onClick={() => setButtonPopup(true)} id="smile"
                     src="./assets/smile.png" alt=""
                     />
+                    <Popup trigger ={buttonPopup} setTrigger ={setButtonPopup}>
+
+                    </Popup>
                     </div>
                     <div className="item" >
                    <img onClick={() => setButtonPopup(true)} id="sad"
@@ -29,14 +32,19 @@ export default function Mood() {
                     </Popup>
                     </div>
                     <div className="item">
-                    <img  id="angry"
+                    <img onClick={() => setButtonPopup(true)} id="angry"
                     src="./assets/angry.png" alt=""
                     />
+                    <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
+
+                    </Popup>
                    </div>
                    <div className="item">
-                    <img  id="emotion"
-                    src="./assets/emotions.png" alt=""
-                    />
+                    <img onClick={() => setButtonPopup(true)} id="emotion"
+                    src="./assets/emotions.png" alt=""/>
+                     <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                         </Popup>
+            
                     </div>
                       </div>
                </div>
