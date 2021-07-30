@@ -13,7 +13,7 @@ const resolvers = {
 
             console.log(_id)
 
-            const userData = await User.findOne( {_id:_id} ).populate('habits');
+            const userData = await User.findOne( {_id:_id} ).populate('habits moods');
             
             return userData;
     
@@ -59,7 +59,21 @@ const resolvers = {
                 )
                 return updatedUser;
             }
-            throw new AuthenticationError('You need to be logged in!')
+           // throw new AuthenticationError('You need to be logged in!')
+
+        },
+
+        addMood: async (parent, { description,rating,id}) => {
+            const mood= await Mood.create({description,rating});
+            if (id) {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id:id },
+                    { $addToSet: {moods: mood} },
+                    { new: true }
+                )
+                return updatedUser;
+            }
+            //throw new AuthenticationError('You need to be logged in!')
 
         }
         
