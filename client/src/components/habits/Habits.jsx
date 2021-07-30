@@ -1,5 +1,5 @@
 import React from 'react';
-import HabitList from './HabitList';
+import HabitList from '../habitlist/HabitList';
 
 const Habits = ({ habits }) => {
     return (

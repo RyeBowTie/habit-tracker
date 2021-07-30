@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import Header from './HabitHeader';
-import CreateHabit from './CreateHabit';
-import DeleteHabit from './DeleteHabit';
-import UpdateHabit from './UpdateHabit';
+import Header from '../habitheader/HabitHeader';
+import CreateHabit from '../createhabits/CreateHabit';
+import DeleteHabit from '../delethabits/DeleteHabit';
+import UpdateHabit from '../uphabit/UpdateHabit';
 
 const HabitDashboard = ({ habits }) => {
     const [currentPage, setCurrentPage] = useState('');
