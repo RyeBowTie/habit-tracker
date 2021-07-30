@@ -25,8 +25,8 @@ const userSchema = new Schema(
     // set habits to be an array of data that adheres to the habitSchema
     habits: [habitSchema],
   
-   // set mood to be an array of data that adheres to the mood
-   mood: [moodSchema],
+    // set mood to be an array of data that adheres to the mood
+    mood: [moodSchema],
   },
 
   // set this to use virtual below

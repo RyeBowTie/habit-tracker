@@ -4,7 +4,6 @@ const habitSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   date: {
     type: Date,
@@ -24,4 +23,4 @@ const habitSchema = new Schema({
 
 const Habit = model('Habit', habitSchema);
 
-module.exports = Habit;
+module.exports = habitSchema;
