@@ -6,14 +6,28 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        me: async (parent, args, context) => {
-            if (context.user) {
-                const userData = await User.findOne({ _id: context.user._id })
-                .select('-__v -password')
-                return userData;
-            }
-            throw new AuthenticationError('Not logged in');
+        me: async (parent, {_id}) => {
+
+            console.log("Logging...")
+
+            console.log(_id)
+
+            const userData = await User.findOne( {_id:_id} );
+            
+            return userData;
+    
         }
+
+        // me: async (parent, args, context) => {
+
+        //     if (context.user) {
+        //         const userData = await User.findOne({ _id: context.user._id })
+        //         .select('-__v -password')
+        //         return userData;
+        //     }
+
+        //     throw new AuthenticationError('Not logged in');
+        // }
     },
     Mutation: {
         login: async (parent, { email, password }) => {
