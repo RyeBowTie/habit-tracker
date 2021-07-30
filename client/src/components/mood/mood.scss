@@ -1,0 +1,40 @@
+@import "../../global.scss";
+
+.mood {
+ background-color: rgb(255, 255, 255);
+ display: flex;
+ flex-direction:column;
+ align-items: center;
+
+
+h1{
+    font-size: 50px;
+
+}
+
+
+.container{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   margin: 10px 30px;
+
+   .item{ 
+    margin: 10px 50px;
+
+       img:hover{ 
+        transform:scale(1.25);
+        cursor: pointer;
+   }
+
+ 
+ }
+
+  
+
+   
+}
+
+
+}
