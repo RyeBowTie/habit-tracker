@@ -19,9 +19,9 @@ export default function Mood() {
                     />
                     </div>
                     <div className="item" >
-                    <button onClick={() => setButtonPopup(true)}><img id="sad"
+                   <img onClick={() => setButtonPopup(true)} id="sad"
                     src="./assets/sad.png" alt=""
-                    /></button>
+                    />
                     <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
                     <form>
                    
