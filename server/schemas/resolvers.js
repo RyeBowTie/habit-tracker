@@ -49,14 +49,17 @@ const resolvers = {
             return { token, user };
         },
 
-        addHabit: async (parent, { name,rating,id}) => {
+        addHabit: async (parent, { name, rating, id}) => {
+
             const habit= await Habit.create({name,rating});
+
+            console.log(habit)
             if (id) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id:id },
                     { $addToSet: {habits: habit} },
                     { new: true }
-                )
+                ).populate('habits')
                 return updatedUser;
             }
            // throw new AuthenticationError('You need to be logged in!')
