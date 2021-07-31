@@ -11,8 +11,8 @@ export const CREATE_USER = gql`
 `;
 
 export const CREATE_HABIT = gql`
-  mutation addHabit($name:String, $rating:String,$id:String){
-    addHabit(name:$name, rating:$rating, id:$id){
+  mutation addHabit($name:String, $rating:String){
+    addHabit(name:$name, rating:$rating){
       _id
       username
       habits{
@@ -23,6 +23,14 @@ export const CREATE_HABIT = gql`
 `;
 
 export const CREATE_MOOD = gql`
-
+  mutation addMood($description:String, $rating:String){
+    addMood(description:$description, rating:$rating){
+      _id
+      username
+      moods{
+        description
+      }
+    }
+  }
 `
 
