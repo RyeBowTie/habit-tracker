@@ -7,34 +7,23 @@
  align-items: center;
 
 
-h1{
-    font-size: 50px;
-
 }
-
-
-.container{
-  
+.Popup{
     display: flex;
     align-items: center;
     justify-content: center;
-   margin: 10px 30px;
-
-   .item{ 
-    margin: 10px 50px;
-
-       img:hover{ 
-        transform:scale(1.25);
-        cursor: pointer;
-   }
-
- 
- }
-
-  
-
-   
+   margin: 300px 10px;
+   img:hover{ 
+    transform:scale(1.25);
+    cursor: pointer;
 }
 
+}
 
+#smile{
+  margin: 0px 20px;
+}
+
+#sad{
+    margin: 0px 20px
 }

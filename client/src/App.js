@@ -18,12 +18,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <MoodForm/>
+        
+     
      
         {/* <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Switch>
             <Route exact path="/">
               <Home />
+                 <MoodForm/>
             </Route>
             <Route exact path="/matchup">
               <Matchup />

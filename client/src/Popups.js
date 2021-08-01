@@ -1,16 +1,27 @@
-import React from 'react'
+  import React from 'react'
 import './popup.scss'
+import ReactDOM from 'react-dom'
 
-function Popups(props) {
-    return ( props.trigger)? (
-        <div className="popups">
-            <div className="popup-inner">
-         
-                <button className="close-btn" onClick={()=>props.setTrigger(false)}>close</button>
-                { props.children } 
-            </div>
+
+const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
+    <React.Fragment>
+      <div className="modal-overlay"/>
+      <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
+        <div className="modal">
+          <div className="modal-header">
+            <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form>
+                 <textarea class="textarea" cols="46" rows="10" placeholder="e.g. Hello world"></textarea>
+                 
+                 <input type="submit"  value="submit" class="submitButton" />
+
+            </form>
         </div>
-    ) : "";
-}
-
-export default Popups
+      </div>
+    </React.Fragment>, document.body
+  ) : null;
+  
+  export default Modal;
