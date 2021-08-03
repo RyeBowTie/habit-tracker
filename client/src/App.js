@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Navbar from './components/login/Navbar';
 
 import MoodForm from './components/mood/Mood';
-import CalendarPage from './components/calander/Calendar'
-import Home from './components/home/Home';
-import Dashboard from './components/habitDash/habitDashboard';
-import Habits from './components/habits/Habits';
-import habits from './habitExamples'
+// import CalendarPage from './components/calander/Calendar'
+// import Home from './components/home/Home';
+// import Dashboard from './components/habitDash/habitDashboard';
+// import Habits from './components/habits/Habits';
+// import habits from './habitExamples'
 
 const client = new ApolloClient({
   request: operation => {
@@ -30,23 +30,24 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/mood/">
-          <MoodForm />
-        </Route>
-        <Route exact path="/dashboard/">
-          <Dashboard habits={habits}/>
-        </Route>
-        <Route exact path="/calendar/:userId">
-          <CalendarPage />
-        </Route>
-        <Route exact path="/habits/">
-          <Habits habits={habits}/>
-        </Route>
-      </Switch>
+        <MoodForm/>
+     
+        {/* <div className="flex-column justify-center align-center min-100-vh bg-primary">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/matchup">
+              <Matchup />
+            </Route>
+            <Route exact path="/matchup/:id">
+              <Vote />
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+        </div> */}
       </Router>
     </ApolloProvider>
   );
