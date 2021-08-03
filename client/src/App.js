@@ -4,10 +4,9 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import MoodForm from './components/mood/Mood';
 import CalendarPage from './components/calander/Calendar'
-import Home from './components/home/Home';
-import Dashboard from './components/habitDash/habitDashboard';
 import Habits from './components/habits/Habits';
 import habits from './habitExamples'
+import Hub from './components/main/Hub'
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -18,7 +17,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        
+        <Hub />
+
+
      
      
         {/* <div className="flex-column justify-center align-center min-100-vh bg-primary">

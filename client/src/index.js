@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+import './boxicons-2.0.9/css/boxicons.min.css'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

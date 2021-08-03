@@ -23,7 +23,7 @@ const {isShowing, toggle} = useModal();
 return (
     <div>
         <header>
-        <p>Place holder fro mood titel</p>
+        <p>Place holder fro mood title</p>
         </header>
     <div className="Popup">
   
