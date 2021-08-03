@@ -31,6 +31,7 @@ const typeDefs = gql`
     type Query {
         me: User
         meById(_id:String): User
+        moodByDate(date: String): User
     }
     type Mutation {
         login(email: String!, password: String!): Auth

@@ -1,10 +1,41 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_TECH = gql`
-  query tech {
-    tech {
+
+export const GET_USER = gql`
+  {
+    me {
       _id
-      name
+      username
+      email
+      moods {
+        description
+        rating
+        date
+      }
+      habits{
+        name
+        rating
+        date
+      }
+    }
+  }
+`
+
+export const QUERY_MOOD = gql`
+{
+moodByDate {
+      description
+      rating
+      date
+    }
+  }
+  `
+
+export const QUERY_MOOD_DESCRIPTION = gql`
+{
+  moodByDate {
+    mood {
+      description
     }
   }
 `;

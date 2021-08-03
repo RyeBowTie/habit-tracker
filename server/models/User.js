@@ -62,8 +62,17 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-
-
+// get the mood count for the user
+userSchema.virtual('moods_count').get(function () {
+  return this.moods.length;
+});
+// get the last mood
+userSchema.virtual('last_mood').get(function () {
+  return this.moods[this.moods.length - 1];
+});
+userSchema.virtual('moods').get(function () {
+  return this.moods;
+});
 const User = model('User', userSchema);
 
 module.exports = User;
