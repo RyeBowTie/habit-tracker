@@ -15,7 +15,7 @@ export default function Mood() {
                <div className ="container">
                    <div className="item">
                     <img  onClick={() => setButtonPopup(true)} id="smile"
-                    src="./assets/smile.png" alt=""
+                    src="./assets/smile.png" alt="Happy"
                     />
                     <Popup trigger ={buttonPopup} setTrigger ={setButtonPopup}>
 
@@ -23,7 +23,7 @@ export default function Mood() {
                     </div>
                     <div className="item" >
                    <img onClick={() => setButtonPopup(true)} id="sad"
-                    src="./assets/sad.png" alt=""
+                    src="./assets/sad.png" alt="Sad"
                     />
                     <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
                     <form>
@@ -33,7 +33,7 @@ export default function Mood() {
                     </div>
                     <div className="item">
                     <img onClick={() => setButtonPopup(true)} id="angry"
-                    src="./assets/angry.png" alt=""
+                    src="./assets/angry.png" alt="Angry"
                     />
                     <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
 
@@ -41,7 +41,7 @@ export default function Mood() {
                    </div>
                    <div className="item">
                     <img onClick={() => setButtonPopup(true)} id="emotion"
-                    src="./assets/emotions.png" alt=""/>
+                    src="./assets/emotions.png" alt="Emotional"/>
                      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                          </Popup>
             
