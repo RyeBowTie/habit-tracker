@@ -9,22 +9,22 @@ const resolvers = {
     Query: {
         meById: async (parent, {_id}) => {
 
-            console.log("Logging...")
-
-            console.log(_id)
-
-            const userData = await User.findOne( {_id:_id} ).populate('habits moods');
-            
-            return userData;
+            return await User.findOne( {_id:_id} ).populate('habits moods');
     
         },
-
         me: async (parent, args, context) => {
 
             if (context.user) {
-                const userData = await User.findOne({ _id: context.user._id })
-                .select('-__v -password')
-                return userData;
+                return await User.findOne({ _id: context.user._id })
+                .select('-__v -password');
+            }
+
+            throw new AuthenticationError('Not logged in');
+        },
+        moodByDate: async (parent, args, context) => {
+
+            if (context.date) {
+                return await Mood.findOne({ date: context.date });
             }
 
             throw new AuthenticationError('Not logged in');
