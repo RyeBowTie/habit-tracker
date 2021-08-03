@@ -29,6 +29,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+
       <Navbar />
         <MoodForm/>
      
@@ -36,6 +37,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
+                 <MoodForm/>
             </Route>
             <Route exact path="/matchup">
               <Matchup />
