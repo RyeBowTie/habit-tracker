@@ -1,15 +1,16 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_TECH = gql`
-  query tech {
-    tech {
-      _id
-      name
+export const QUERY_MOOD = gql`
+  query mood($id: ID!, $date: String!) {
+    meById(_id: $id)  {
+      mood(date: $date) {
+        rating
+      }
     }
   }
 `;
 
-export const QUERY_MATCHUPS = gql`
+export const QUERY_MOOD_DESCRIPTION = gql`
   query matchups($_id: String) {
     matchups(_id: $_id) {
       _id
