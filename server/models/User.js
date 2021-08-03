@@ -39,12 +39,6 @@ const userSchema = new Schema(
     ]
   },
 
-  // set this to use virtual below
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
 );
 
 // hash user password
@@ -70,9 +64,10 @@ userSchema.virtual('moods_count').get(function () {
 userSchema.virtual('last_mood').get(function () {
   return this.moods[this.moods.length - 1];
 });
-userSchema.virtual('moods').get(function () {
+userSchema.virtual('all_moods').get(function () {
   return this.moods;
 });
+
 const User = model('User', userSchema);
 
 module.exports = User;
