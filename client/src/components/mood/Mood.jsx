@@ -24,7 +24,7 @@ const {isShowing, toggle} = useModal();
 return (
     <div>
         <header>
-        <p>Place holder fro mood titel</p>
+        <p>Place holder fro mood title</p>
         </header>
     <div className="Popup">
   
@@ -53,7 +53,7 @@ return (
  );
 
 
-    const [buttonPopup, setButtonPopup] = useState(false);
+ const [buttonPopup, setButtonPopup] = useState(false);
 
     return (
         <div className="mood" id="mood"> 
