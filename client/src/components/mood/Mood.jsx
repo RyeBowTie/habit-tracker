@@ -63,33 +63,33 @@ return (
                     <img  onClick={() => setButtonPopup(true)} id="smile"
                     src="./assets/smile.png" alt="Happy"
                     />
-                    <Popup trigger ={buttonPopup} setTrigger ={setButtonPopup}>
+                    <Popups trigger ={buttonPopup} setTrigger ={setButtonPopup}>
 
-                    </Popup>
+                    </Popups>
                     </div>
                     <div className="item" >
                    <img onClick={() => setButtonPopup(true)} id="sad"
                     src="./assets/sad.png" alt="Sad"
                     />
-                    <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
+                    <Popups trigger={buttonPopup} setTrigger= {setButtonPopup}>
                     <form>
                    
             </form>
-                    </Popup>
+                    </Popups>
                     </div>
                     <div className="item">
                     <img onClick={() => setButtonPopup(true)} id="angry"
                     src="./assets/angry.png" alt="Angry"
                     />
-                    <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
+                    <Popups trigger={buttonPopup} setTrigger= {setButtonPopup}>
 
-                    </Popup>
+                    </Popups>
                    </div>
                    <div className="item">
                     <img onClick={() => setButtonPopup(true)} id="emotion"
                     src="./assets/emotions.png" alt="Emotional"/>
-                     <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                         </Popup>
+                     <Popups trigger={buttonPopup} setTrigger={setButtonPopup}>
+                         </Popups>
             
                     </div>
                       </div>
