@@ -39,12 +39,6 @@ const userSchema = new Schema(
     ]
   },
 
-  // set this to use virtual below
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
 );
 
 // hash user password
@@ -62,7 +56,17 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-
+// get the mood count for the user
+userSchema.virtual('moods_count').get(function () {
+  return this.moods.length;
+});
+// get the last mood
+userSchema.virtual('last_mood').get(function () {
+  return this.moods[this.moods.length - 1];
+});
+userSchema.virtual('all_moods').get(function () {
+  return this.moods;
+});
 
 const User = model('User', userSchema);
 
